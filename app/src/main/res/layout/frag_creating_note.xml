@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.CreatingNoteFragment">
+    tools:context=".ui.creatingNote.CreatingNoteFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -21,14 +21,28 @@
                 android:id="@+id/title_note_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
                 android:background="@null"
-                android:singleLine="true" />
+                android:fontFamily="@font/inter_medium"
+                android:hint="@string/creating_note_title"
+                android:singleLine="true"
+                android:textColor="@color/col_primary_text"
+                android:textColorHint="@color/col_secondary_text"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/description_note_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="fdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdffdshjkvghdsjkghdfjhgksdhgklsdjgklsdjgklsdjgkldfjgklsdjgklsdjflsdjfl;sdkfl;sdkfl;sdfksdl;fksl;dbnlkdf'bjklfd'sn fknkldfbnkldfjvkldfnv klv fnb klfdnlkdfnvdf" />
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                android:background="@null"
+                android:fontFamily="@font/inter_regular"
+                android:hint="@string/creating_note_description"
+                android:textColor="@color/col_primary_text"
+                android:textColorHint="@color/col_secondary_text"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -41,14 +55,17 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:backgroundTint="@color/white"
-        app:fabCradleMargin="10dp"
+        app:fabCradleMargin="15dp"
         app:hideOnScroll="false" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="@color/white"
-        app:layout_anchor="@id/bottom_app_bar" />
+        android:tint="@color/col_secondary_text"
+        app:layout_anchor="@id/bottom_app_bar"
+        app:srcCompat="@drawable/ic_done" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

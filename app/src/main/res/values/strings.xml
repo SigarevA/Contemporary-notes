@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Contemporary Notes</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="creating_note_description">Описание</string>
+    <string name="creating_note_title">Заголовок</string>
+    <string name="note_created_successfully">Заметка успешно создана!</string>
+    <string name="incomplete_data">Заполнены не все поля!</string>
+    <string name="error_saving_note">Ой, кажется, дождь начинается)</string>
 </resources>
