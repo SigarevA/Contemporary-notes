@@ -1,6 +1,5 @@
 package ru.bsc.contemporaryNotes.ui.creatingNote
 
-import com.github.terrakok.cicerone.Cicerone
 import com.github.terrakok.cicerone.Router
 
 class CreatingNotePresenter(
