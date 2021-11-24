@@ -6,4 +6,7 @@
     <string name="note_created_successfully">Заметка успешно создана!</string>
     <string name="incomplete_data">Заполнены не все поля!</string>
     <string name="error_saving_note">Ой, кажется, дождь начинается)</string>
+    <string name="creating_note_about">О приложении</string>
+    <string name="creating_note_share">Поделиться</string>
+    <string name="frag_info_message">Оставайтесь всегда\nв курсе своих дел:)</string>
 </resources>

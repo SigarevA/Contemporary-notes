@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/creating_note_share_mi"
+        android:icon="@drawable/ic_share"
+        android:title="@string/creating_note_share"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/creating_note_about_mi"
+        android:icon="@drawable/ic_baseline_info"
+        android:title="@string/creating_note_about"
+        app:showAsAction="ifRoom" />
+</menu>

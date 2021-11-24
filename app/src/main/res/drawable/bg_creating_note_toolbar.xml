@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners
+        android:bottomLeftRadius="@dimen/frag_creating_note_corners_toolbar"
+        android:bottomRightRadius="@dimen/frag_creating_note_corners_toolbar" />
+    <solid android:color="@color/white" />
+</shape>

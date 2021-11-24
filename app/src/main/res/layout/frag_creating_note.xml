@@ -17,6 +17,14 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/creating_note_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_creating_note_toolbar"
+                android:elevation="4dp"
+                app:menu="@menu/creating_note_menu" />
+
             <EditText
                 android:id="@+id/title_note_et"
                 android:layout_width="match_parent"
