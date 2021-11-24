@@ -21,10 +21,9 @@ class CreatingNoteFragment : Fragment(), CreatingView {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        binding = FragCreatingNoteBinding.inflate(inflater, container, false)
-        return binding!!.root
-    }
+    ): View = FragCreatingNoteBinding.inflate(inflater, container, false).also {
+        binding = it
+    }.root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
