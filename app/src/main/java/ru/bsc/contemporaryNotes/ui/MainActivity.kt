@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
             fragmentTransaction.setCustomAnimations(
                 R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit
             )
-          //  fragmentTransaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out)
         }
     }
     private val navigatorHolder: NavigatorHolder by appDI.instance()
