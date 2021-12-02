@@ -6,5 +6,10 @@
     <dimen name="frag_creating_note_horizontal_margin_et">16dp</dimen>
     <dimen name="frag_creating_note_primary_top_margin">16dp</dimen>
     <dimen name="frag_creating_note_secondary_top_margin">24dp</dimen>
+    <dimen name="frag_creating_note_corners_toolbar">16dp</dimen>
     <dimen name="fab_margin">12dp</dimen>
+
+    <dimen name="frag_info_anim_size">200dp</dimen>
+    <dimen name="frag_info_message_margin">16dp</dimen>
+    <dimen name="frag_info_toolbar_elevation">4dp</dimen>
 </resources>

@@ -37,6 +37,7 @@ android {
     project.ext {
         kodein_version = '7.9.0'
         cicerone_version = '7.1'
+        lottieVersion = '4.2.1'
     }
 }
 
@@ -47,6 +48,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
+    implementation "com.airbnb.android:lottie:$lottieVersion"
     implementation "org.kodein.di:kodein-di:$kodein_version"
     implementation "com.github.terrakok:cicerone:$cicerone_version"
 
