@@ -11,4 +11,5 @@
 
     <dimen name="frag_info_anim_size">200dp</dimen>
     <dimen name="frag_info_message_margin">16dp</dimen>
+    <dimen name="frag_info_toolbar_elevation">4dp</dimen>
 </resources>

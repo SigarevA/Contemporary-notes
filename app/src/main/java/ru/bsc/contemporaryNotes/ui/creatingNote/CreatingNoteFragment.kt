@@ -6,25 +6,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import org.kodein.di.factory
 import org.kodein.di.instance
-import org.kodein.di.newInstance
 import ru.bsc.contemporaryNotes.R
 import ru.bsc.contemporaryNotes.databinding.FragCreatingNoteBinding
 import ru.bsc.contemporaryNotes.di.appDI
 import ru.bsc.contemporaryNotes.model.Note
 import ru.bsc.contemporaryNotes.ui.utils.showSnackBar
-import java.lang.IllegalArgumentException
 
 class CreatingNoteFragment : Fragment(), CreatingView {
 
     private val presenter: CreatingNotePresenter by appDI.instance(arg = this)
     private var binding: FragCreatingNoteBinding? = null
     private val title: String
-        get() = binding?.titleNoteEt?.text?.toString() ?: ""
+        get() = binding?.titleNoteEt?.text?.toString().orEmpty()
 
     private val description: String
-        get() = binding?.descriptionNoteEt?.text?.toString() ?: ""
+        get() = binding?.descriptionNoteEt?.text?.toString().orEmpty()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
