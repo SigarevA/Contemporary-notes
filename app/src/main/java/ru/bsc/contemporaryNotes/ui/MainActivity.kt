@@ -8,7 +8,6 @@ import androidx.fragment.app.FragmentTransaction
 import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Replace
-import com.github.terrakok.cicerone.Router
 import com.github.terrakok.cicerone.androidx.AppNavigator
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 import org.kodein.di.instance
