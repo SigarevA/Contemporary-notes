@@ -62,6 +62,8 @@ class CreatingNoteFragment : Fragment(), CreatingView {
             putExtra(Intent.EXTRA_TEXT, note.description)
             type = "text/plain"
         }
+        requireArguments()
+        requireArguments().getLong("DATE")
         val shareIntent = Intent.createChooser(sendIntent, null)
         startActivity(shareIntent)
     }
