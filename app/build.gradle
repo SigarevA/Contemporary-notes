@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -38,6 +39,8 @@ android {
         kodein_version = '7.9.0'
         cicerone_version = '7.1'
         lottieVersion = '4.2.1'
+        groupie_version = '2.10.0'
+        frag_ktx = '1.4.0'
     }
 }
 
@@ -51,7 +54,9 @@ dependencies {
     implementation "com.airbnb.android:lottie:$lottieVersion"
     implementation "org.kodein.di:kodein-di:$kodein_version"
     implementation "com.github.terrakok:cicerone:$cicerone_version"
-    implementation "androidx.fragment:fragment-ktx:1.4.0"
+    implementation "com.github.lisawray.groupie:groupie:$groupie_version"
+    implementation "com.github.lisawray.groupie:groupie-viewbinding:$groupie_version"
+    implementation "androidx.fragment:fragment-ktx:$frag_ktx"
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

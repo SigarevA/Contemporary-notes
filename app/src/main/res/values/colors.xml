@@ -10,4 +10,5 @@
 
     <color name="col_primary_text">#0A122F</color>
     <color name="col_secondary_text">#7C8BC2</color>
+    <color name="col_content">#FF8D1A</color>
 </resources>

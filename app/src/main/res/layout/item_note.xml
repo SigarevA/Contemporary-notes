@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_note_card"
+    android:clickable="true"
+    android:elevation="4dp"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:stateListAnimator="@animator/zoom_out_animator">
 
     <TextView
         android:id="@+id/item_note_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:ellipsize="end"
         android:fontFamily="@font/inter_medium"
         android:maxLines="2"
@@ -17,6 +24,7 @@
         android:id="@+id/item_note_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:ellipsize="end"
         android:fontFamily="@font/inter_regular"
         android:maxLines="2"

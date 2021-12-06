@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import androidx.fragment.app.commit
 import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Replace
@@ -14,6 +15,7 @@ import org.kodein.di.instance
 import ru.bsc.contemporaryNotes.R
 import ru.bsc.contemporaryNotes.di.appDI
 import ru.bsc.contemporaryNotes.ui.Screens.CreatingNote
+import ru.bsc.contemporaryNotes.ui.notes.NoteFragment
 
 class MainActivity : AppCompatActivity() {
     private val navigator = object : AppNavigator(this, R.id.container) {
@@ -34,7 +36,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         if (savedInstanceState == null) {
-            navigator.applyCommands(arrayOf<Command>(Replace(CreatingNote())))
+            supportFragmentManager.commit {
+                add(R.id.container, NoteFragment(), "NoteFragment")
+                // addToBackStack(null)
+            }
+            // navigator.applyCommands(arrayOf<Command>(Replace(CreatingNote())))
         }
     }
 

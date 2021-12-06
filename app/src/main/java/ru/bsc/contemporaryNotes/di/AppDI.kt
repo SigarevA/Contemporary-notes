@@ -5,4 +5,5 @@ import org.kodein.di.DI
 val appDI = DI {
     import(navigationModule)
     import(presenterModule)
+    import(repoModule)
 }

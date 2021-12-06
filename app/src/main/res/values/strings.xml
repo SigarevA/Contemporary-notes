@@ -9,4 +9,8 @@
     <string name="creating_note_about">О приложении</string>
     <string name="creating_note_share">Поделиться</string>
     <string name="frag_info_message">Оставайтесь всегда\nв курсе своих дел:)</string>
+    <string name="frag_creating_reminder">Напоминание</string>
+    <string name="item_notes_header">Заметки</string>
+
+    <string name="frag_note_error_msg">Не удалось загрузить заметки!</string>
 </resources>

@@ -15,4 +15,7 @@
 
     <dimen name="item_note_description">14sp</dimen>
     <dimen name="item_note_title">16sp</dimen>
+
+    <dimen name="item_notes_header_size">28sp</dimen>
+    <dimen name="item_note_margin_text">8dp</dimen>
 </resources>
