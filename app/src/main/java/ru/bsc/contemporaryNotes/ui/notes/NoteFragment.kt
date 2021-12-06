@@ -1,20 +1,17 @@
 package ru.bsc.contemporaryNotes.ui.notes
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.xwray.groupie.GroupieAdapter
 import com.xwray.groupie.Section
 import org.kodein.di.instance
 import ru.bsc.contemporaryNotes.R
-import ru.bsc.contemporaryNotes.databinding.FragCreatingNoteBinding
 import ru.bsc.contemporaryNotes.databinding.FragNotesBinding
 import ru.bsc.contemporaryNotes.di.NoteParams
 import ru.bsc.contemporaryNotes.di.appDI
@@ -70,7 +67,6 @@ class NoteFragment : Fragment(), NoteView {
     }
 
     override fun renderSuccess(notes: List<Note>) {
-        Log.d(TAG, "render success")
         notesSection.update(notes.map { NoteItem(it, presenter::processOnClick) })
     }
 
@@ -79,12 +75,11 @@ class NoteFragment : Fragment(), NoteView {
     }
 
     override fun renderOnClick(note: Note) {
-        Log.d(TAG, "renderOnClick")
         requireActivity().supportFragmentManager.commit {
             setCustomAnimations(
                 R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit
             )
-            replace(R.id.container, DetailNoteFragment(), "DetailFragment")
+            replace(R.id.container, DetailNoteFragment.newInstance(note), "DetailFragment")
             addToBackStack(null)
         }
     }

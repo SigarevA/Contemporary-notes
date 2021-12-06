@@ -1,20 +1,16 @@
 package ru.bsc.contemporaryNotes.ui
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.commit
-import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.NavigatorHolder
-import com.github.terrakok.cicerone.Replace
 import com.github.terrakok.cicerone.androidx.AppNavigator
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 import org.kodein.di.instance
 import ru.bsc.contemporaryNotes.R
 import ru.bsc.contemporaryNotes.di.appDI
-import ru.bsc.contemporaryNotes.ui.Screens.CreatingNote
 import ru.bsc.contemporaryNotes.ui.notes.NoteFragment
 
 class MainActivity : AppCompatActivity() {
@@ -38,7 +34,6 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager.commit {
                 add(R.id.container, NoteFragment(), "NoteFragment")
-                // addToBackStack(null)
             }
             // navigator.applyCommands(arrayOf<Command>(Replace(CreatingNote())))
         }

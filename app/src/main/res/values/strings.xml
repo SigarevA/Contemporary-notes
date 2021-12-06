@@ -13,4 +13,5 @@
     <string name="item_notes_header">Заметки</string>
 
     <string name="frag_note_error_msg">Не удалось загрузить заметки!</string>
+    <string name="frag_note_details_title">Подробности</string>
 </resources>

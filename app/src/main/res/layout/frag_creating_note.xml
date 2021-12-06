@@ -27,17 +27,15 @@
 
             <EditText
                 android:id="@+id/title_note_et"
+                style="@style/NoteTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/frag_creating_note_horizontal_margin_et"
                 android:layout_marginTop="@dimen/frag_creating_note_primary_top_margin"
                 android:background="@null"
-                android:fontFamily="@font/inter_medium"
                 android:hint="@string/creating_note_title"
                 android:singleLine="true"
-                android:textColor="@color/col_primary_text"
-                android:textColorHint="@color/col_secondary_text"
-                android:textSize="@dimen/frag_creating_note_primary_text_size" />
+                android:textColorHint="@color/col_secondary_text" />
 
             <EditText
                 android:id="@+id/description_note_et"
@@ -56,8 +54,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
                 android:background="@drawable/bg_reminder_container"
                 android:elevation="4dp"
                 android:orientation="vertical">
