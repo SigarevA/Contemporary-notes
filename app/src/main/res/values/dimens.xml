@@ -7,6 +7,17 @@
     <dimen name="frag_creating_note_primary_top_margin">16dp</dimen>
     <dimen name="frag_creating_note_secondary_top_margin">24dp</dimen>
     <dimen name="frag_creating_note_corners_toolbar">16dp</dimen>
+    <dimen name="frag_creating_note_card_elevation">4dp</dimen>
+    <dimen name="frag_creating_note_card_margin_top">16dp</dimen>
+    <dimen name="frag_creating_note_card_margin_horizontal">8dp</dimen>
+    <dimen name="frag_creating_note_card_margin_bottom">@dimen/frag_creating_note_card_margin_horizontal</dimen>
+    <dimen name="frag_creating_note_flag_margin_top">16dp</dimen>
+    <dimen name="frag_creating_note_flag_margin_horizontal">16dp</dimen>
+    <dimen name="frag_creating_note_reminder_margin_top">12dp</dimen>
+    <dimen name="frag_creating_note_reminder_margin_horizontal">4dp</dimen>
+    <dimen name="frag_creating_note_date_preview_margin">8dp</dimen>
+    <dimen name="frag_creating_note_date_preview_padding">8dp</dimen>
+    <dimen name="frag_creating_note_date_preview_elevation">2dp</dimen>
     <dimen name="fab_margin">12dp</dimen>
 
     <dimen name="frag_info_anim_size">200dp</dimen>
@@ -16,6 +27,15 @@
     <dimen name="item_note_description">14sp</dimen>
     <dimen name="item_note_title">16sp</dimen>
 
+
     <dimen name="item_notes_header_size">28sp</dimen>
+    <dimen name="item_header_title_margin_horizontal">16dp</dimen>
+    <dimen name="item_header_title_margin_bottom">8dp</dimen>
+    <dimen name="item_header_title_margin_top">48dp</dimen>
+
     <dimen name="item_note_margin_text">8dp</dimen>
+
+    <dimen name="frag_detail_toolbar_elevation">2dp</dimen>
+    <dimen name="frag_detail_text_margin_top">20dp</dimen>
+    <dimen name="frag_detail_text_margin_horizontal">16dp</dimen>
 </resources>

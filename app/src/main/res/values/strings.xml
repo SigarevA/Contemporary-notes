@@ -14,4 +14,6 @@
 
     <string name="frag_note_error_msg">Не удалось загрузить заметки!</string>
     <string name="frag_note_details_title">Подробности</string>
+    <string name="frag_creating_note_time">Время:</string>
+    <string name="frag_creating_note_date">Дата:</string>
 </resources>

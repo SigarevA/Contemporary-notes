@@ -53,18 +53,18 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginHorizontal="@dimen/frag_creating_note_card_margin_horizontal"
+                android:layout_marginTop="@dimen/frag_creating_note_card_margin_top"
+                android:layout_marginBottom="@dimen/frag_creating_note_card_margin_bottom"
                 android:background="@drawable/bg_reminder_container"
-                android:elevation="4dp"
+                android:elevation="@dimen/frag_creating_note_card_elevation"
                 android:orientation="vertical">
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginHorizontal="@dimen/frag_creating_note_flag_margin_horizontal"
+                    android:layout_marginTop="@dimen/frag_creating_note_flag_margin_top"
                     android:checked="true"
                     android:text="@string/frag_creating_reminder"
                     android:textColor="@color/col_primary_text"
@@ -73,9 +73,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="4dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="12dp">
+                    android:layout_marginHorizontal="@dimen/frag_creating_note_reminder_margin_horizontal"
+                    android:layout_marginTop="@dimen/frag_creating_note_reminder_margin_top">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -86,17 +85,17 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Дата:" />
+                            android:text="@string/frag_creating_note_date" />
 
                         <TextView
                             android:id="@+id/date_preview"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
+                            android:layout_margin="@dimen/frag_creating_note_date_preview_margin"
                             android:background="@drawable/bg_reminder_container"
-                            android:drawableEnd="@drawable/ic_calendar"
-                            android:elevation="2dp"
-                            android:padding="8dp" />
+                            android:elevation="@dimen/frag_creating_note_date_preview_elevation"
+                            android:padding="@dimen/frag_creating_note_date_preview_padding"
+                            app:drawableEndCompat="@drawable/ic_calendar" />
 
                     </LinearLayout>
 
@@ -110,17 +109,17 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Время:" />
+                            android:text="@string/frag_creating_note_time" />
 
                         <TextView
                             android:id="@+id/time_preview"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
+                            android:layout_margin="@dimen/frag_creating_note_date_preview_margin"
                             android:background="@drawable/bg_reminder_container"
-                            android:drawableEnd="@drawable/ic_time"
-                            android:elevation="2dp"
-                            android:padding="8dp" />
+                            android:elevation="@dimen/frag_creating_note_date_preview_elevation"
+                            android:padding="@dimen/frag_creating_note_date_preview_padding"
+                            app:drawableEndCompat="@drawable/ic_time" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
