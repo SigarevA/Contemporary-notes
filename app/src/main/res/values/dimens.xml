@@ -16,6 +16,7 @@
     <dimen name="frag_creating_note_reminder_margin_top">12dp</dimen>
     <dimen name="frag_creating_note_reminder_margin_horizontal">4dp</dimen>
     <dimen name="frag_creating_note_date_preview_margin">8dp</dimen>
+    <dimen name="frag_creating_note_date_preview_marginBottom">16dp</dimen>
     <dimen name="frag_creating_note_date_preview_padding">8dp</dimen>
     <dimen name="frag_creating_note_date_preview_elevation">6dp</dimen>
     <dimen name="fab_margin">12dp</dimen>

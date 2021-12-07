@@ -119,130 +119,17 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/frag_creating_note_date_preview_margin"
-                android:layout_marginBottom="@dimen/frag_creating_note_date_preview_margin"
+                android:layout_marginBottom="@dimen/frag_creating_note_date_preview_marginBottom"
                 android:background="@drawable/bg_reminder_container"
                 android:elevation="@dimen/frag_creating_note_date_preview_elevation"
                 android:padding="@dimen/frag_creating_note_date_preview_padding"
                 app:drawableEndCompat="@drawable/ic_time"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/reminder_container"
+                app:layout_constraintEnd_toEndOf="@id/time_label"
                 app:layout_constraintStart_toStartOf="@id/time_label"
                 app:layout_constraintTop_toBottomOf="@id/time_label" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!--LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/creating_note_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_creating_note_toolbar"
-                android:elevation="@dimen/frag_info_toolbar_elevation"
-                app:menu="@menu/creating_note_menu" />
-
-            <EditText
-                android:id="@+id/title_note_et"
-                style="@style/NoteTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/frag_creating_note_horizontal_margin_et"
-                android:layout_marginTop="@dimen/frag_creating_note_primary_top_margin"
-                android:background="@null"
-                android:hint="@string/creating_note_title"
-                android:singleLine="true"
-                android:textColorHint="@color/col_secondary_text" />
-
-            <EditText
-                android:id="@+id/description_note_et"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/frag_creating_note_horizontal_margin_et"
-                android:layout_marginTop="@dimen/frag_creating_note_secondary_top_margin"
-                android:background="@null"
-                android:fontFamily="@font/inter_regular"
-                android:hint="@string/creating_note_description"
-                android:textColor="@color/col_primary_text"
-                android:textColorHint="@color/col_secondary_text"
-                android:textSize="@dimen/frag_creating_note_secondary_text_size" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/frag_creating_note_card_margin_horizontal"
-                android:layout_marginTop="@dimen/frag_creating_note_card_margin_top"
-                android:layout_marginBottom="@dimen/frag_creating_note_card_margin_bottom"
-                android:background="@drawable/bg_reminder_container"
-                android:elevation="@dimen/frag_creating_note_card_elevation"
-                android:orientation="vertical">
-
-                <com.google.android.material.switchmaterial.SwitchMaterial
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="@dimen/frag_creating_note_flag_margin_horizontal"
-                    android:layout_marginTop="@dimen/frag_creating_note_flag_margin_top"
-                    android:checked="true"
-                    android:text="@string/frag_creating_reminder"
-                    android:textColor="@color/col_primary_text"
-                    android:textSize="@dimen/frag_creating_note_secondary_text_size" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/frag_creating_note_reminder_margin_horizontal"
-                    android:layout_marginTop="@dimen/frag_creating_note_reminder_margin_top">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/frag_creating_note_date" />
-
-                        <TextView
-                            android:id="@+id/date_preview"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/frag_creating_note_date_preview_margin"
-                            android:background="@drawable/bg_reminder_container"
-                            android:elevation="@dimen/frag_creating_note_date_preview_elevation"
-                            android:padding="@dimen/frag_creating_note_date_preview_padding"
-                            app:drawableEndCompat="@drawable/ic_calendar" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="4dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/frag_creating_note_time" />
-
-                        <TextView
-                            android:id="@+id/time_preview"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/frag_creating_note_date_preview_margin"
-                            android:background="@drawable/bg_reminder_container"
-                            android:elevation="@dimen/frag_creating_note_date_preview_elevation"
-                            android:padding="@dimen/frag_creating_note_date_preview_padding"
-                            app:drawableEndCompat="@drawable/ic_time" />
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout-->
 
     </androidx.core.widget.NestedScrollView>
 
