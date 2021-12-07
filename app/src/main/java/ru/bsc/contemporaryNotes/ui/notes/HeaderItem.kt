@@ -2,6 +2,7 @@ package ru.bsc.contemporaryNotes.ui.notes
 
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.PackageManagerCompat
 import androidx.core.view.updateLayoutParams
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.xwray.groupie.viewbinding.BindableItem

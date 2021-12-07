@@ -38,6 +38,11 @@ class DetailNoteFragment : Fragment(R.layout.frag_detail) {
         }
     }
 
+    override fun onDestroyView() {
+        binding = null
+        super.onDestroyView()
+    }
+
     companion object {
         private const val NOTE_ARGS = "note_args"
         fun newInstance(note: Note) = DetailNoteFragment().apply {

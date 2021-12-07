@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.xwray.groupie.GroupieAdapter
 import com.xwray.groupie.Section
 import org.kodein.di.instance
 import ru.bsc.contemporaryNotes.R
@@ -26,6 +26,7 @@ class NoteFragment : Fragment(), NoteView {
     private val presenter: NotePresenter by appDI.instance(arg = NoteParams(this, lifecycleScope))
     private var binding: FragNotesBinding? = null
     private val notesSection: Section = Section()
+    private val noteAdapter by lazy { NoteAdapter(emptyList(), presenter::processOnClick) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,23 +42,26 @@ class NoteFragment : Fragment(), NoteView {
         binding?.let { binding ->
             binding.notes.layoutManager =
                 StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-            val groupAdapter = GroupieAdapter()
+            binding.notes.adapter = noteAdapter
+            // val groupAdapter = GroupieAdapter()
             binding.notes.addItemDecoration(
                 MarginItemDecoration(
                     2,
                     (16 * requireContext().resources.displayMetrics.density).roundToInt(),
-                    includeEdge = true,
-                    isNoHeader = false
+                    includeEdge = true
                 )
             )
-            binding.notes.adapter = groupAdapter
-            groupAdapter.add(HeaderItem())
-            groupAdapter.add(notesSection)
+            binding.notes.addItemDecoration(NoteItemDecoration(requireContext()))
+            // binding.notes.adapter = groupAdapter
+            // groupAdapter.add(HeaderItem())
+            // groupAdapter.add(notesSection)
         }
     }
 
     override fun onDestroyView() {
-        binding!!.notes.adapter = null
+        binding?.apply {
+            notes.adapter = null
+        }
         binding = null
         super.onDestroyView()
     }
@@ -67,7 +71,11 @@ class NoteFragment : Fragment(), NoteView {
     }
 
     override fun renderSuccess(notes: List<Note>) {
-        notesSection.update(notes.map { NoteItem(it, presenter::processOnClick) })
+        val callBack = NoteDiffUtil(noteAdapter.notes, notes)
+        val result = DiffUtil.calculateDiff(callBack)
+        noteAdapter.notes = notes
+        result.dispatchUpdatesTo(noteAdapter)
+        // notesSection.update(notes.map { NoteItem(it, presenter::processOnClick) })
     }
 
     override fun renderError() {
@@ -87,4 +95,18 @@ class NoteFragment : Fragment(), NoteView {
     companion object {
         private const val TAG = "NoteFragment"
     }
+}
+
+class NoteDiffUtil(private val oldNotes: List<Note>, private val newNotes: List<Note>) :
+    DiffUtil.Callback() {
+    override fun getOldListSize(): Int = oldNotes.size
+
+    override fun getNewListSize(): Int = newNotes.size
+
+    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
+        oldNotes[oldItemPosition].id == newNotes[newItemPosition].id
+
+
+    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
+        oldNotes[oldItemPosition] == newNotes[newItemPosition]
 }

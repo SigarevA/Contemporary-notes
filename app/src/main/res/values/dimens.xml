@@ -17,8 +17,9 @@
     <dimen name="frag_creating_note_reminder_margin_horizontal">4dp</dimen>
     <dimen name="frag_creating_note_date_preview_margin">8dp</dimen>
     <dimen name="frag_creating_note_date_preview_padding">8dp</dimen>
-    <dimen name="frag_creating_note_date_preview_elevation">2dp</dimen>
+    <dimen name="frag_creating_note_date_preview_elevation">6dp</dimen>
     <dimen name="fab_margin">12dp</dimen>
+    <dimen name="test">-8dp</dimen>
 
     <dimen name="frag_info_anim_size">200dp</dimen>
     <dimen name="frag_info_message_margin">16dp</dimen>
@@ -26,6 +27,7 @@
 
     <dimen name="item_note_description">14sp</dimen>
     <dimen name="item_note_title">16sp</dimen>
+    <dimen name="item_note_elevation">4dp</dimen>
 
 
     <dimen name="item_notes_header_size">28sp</dimen>

@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/bg_note_card"
     android:clickable="true"
-    android:elevation="4dp"
+    android:elevation="@dimen/item_note_elevation"
     android:focusable="true"
     android:orientation="vertical"
     android:stateListAnimator="@animator/zoom_out_animator">
