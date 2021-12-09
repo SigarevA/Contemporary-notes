@@ -25,4 +25,8 @@ class NotePresenter(
     fun processOnClick(note: Note) {
         noteView.renderOnClick(note)
     }
+
+    fun processOnClickAbout() {
+        noteView.renderOnClickAbout()
+    }
 }

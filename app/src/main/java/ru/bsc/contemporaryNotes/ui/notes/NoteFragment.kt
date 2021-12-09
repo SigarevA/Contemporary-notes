@@ -17,6 +17,7 @@ import ru.bsc.contemporaryNotes.di.appDI
 import ru.bsc.contemporaryNotes.model.Note
 import ru.bsc.contemporaryNotes.ui.decorations.MarginItemDecoration
 import ru.bsc.contemporaryNotes.ui.detail.DetailNoteFragment
+import ru.bsc.contemporaryNotes.ui.info.InfoFragment
 import ru.bsc.contemporaryNotes.ui.utils.showErrorSnackBar
 import kotlin.math.roundToInt
 
@@ -49,6 +50,13 @@ class NoteFragment : Fragment(), NoteView {
                 )
             )
             binding.notes.addItemDecoration(NoteItemDecoration(requireContext(), 2))
+            binding.toolbar.setOnMenuItemClickListener { menuItem ->
+                when (menuItem.itemId) {
+                    R.id.frag_notes_about_app_mi ->
+                        presenter.processOnClickAbout()
+                }
+                true
+            }
         }
     }
 
@@ -81,6 +89,16 @@ class NoteFragment : Fragment(), NoteView {
                 R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit
             )
             replace(R.id.container, DetailNoteFragment.newInstance(note), "DetailFragment")
+            addToBackStack(null)
+        }
+    }
+
+    override fun renderOnClickAbout() {
+        requireActivity().supportFragmentManager.commit {
+            setCustomAnimations(
+                R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit
+            )
+            replace(R.id.container, InfoFragment(), "DetailFragment")
             addToBackStack(null)
         }
     }

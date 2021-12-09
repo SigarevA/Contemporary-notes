@@ -7,4 +7,5 @@ interface CreatingView {
     fun shareNote(note: Note)
     fun saveError()
     fun inappropriateData()
+    fun navigateToAbout()
 }

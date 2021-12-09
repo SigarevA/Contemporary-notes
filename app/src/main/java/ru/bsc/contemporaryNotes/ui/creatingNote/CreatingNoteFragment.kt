@@ -75,4 +75,8 @@ class CreatingNoteFragment : Fragment(), CreatingView {
     override fun inappropriateData() {
         binding?.root?.showSnackBar(R.string.incomplete_data, binding?.fab)
     }
+
+    override fun navigateToAbout() {
+        TODO("Not yet implemented")
+    }
 }

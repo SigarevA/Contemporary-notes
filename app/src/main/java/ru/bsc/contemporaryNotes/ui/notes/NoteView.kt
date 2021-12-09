@@ -7,4 +7,5 @@ interface NoteView {
     fun renderSuccess(notes: List<Note>)
     fun renderError()
     fun renderOnClick(note: Note)
+    fun renderOnClickAbout()
 }
