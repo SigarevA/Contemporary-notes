@@ -1,6 +1,5 @@
 package ru.bsc.contemporaryNotes.ui.creatingNote
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +10,9 @@ import ru.bsc.contemporaryNotes.R
 import ru.bsc.contemporaryNotes.databinding.FragCreatingNoteBinding
 import ru.bsc.contemporaryNotes.di.appDI
 import ru.bsc.contemporaryNotes.model.Note
+import ru.bsc.contemporaryNotes.ui.info.InfoFragment
+import ru.bsc.contemporaryNotes.ui.utils.createShareIntent
+import ru.bsc.contemporaryNotes.ui.utils.openFragment
 import ru.bsc.contemporaryNotes.ui.utils.showSnackBar
 
 class CreatingNoteFragment : Fragment(), CreatingView {
@@ -57,15 +59,7 @@ class CreatingNoteFragment : Fragment(), CreatingView {
     }
 
     override fun shareNote(note: Note) {
-        val sendIntent: Intent = Intent().apply {
-            action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, note.description)
-            type = "text/plain"
-        }
-        requireArguments()
-        requireArguments().getLong("DATE")
-        val shareIntent = Intent.createChooser(sendIntent, null)
-        startActivity(shareIntent)
+        startActivity(note.createShareIntent())
     }
 
     override fun saveError() {
@@ -77,6 +71,8 @@ class CreatingNoteFragment : Fragment(), CreatingView {
     }
 
     override fun navigateToAbout() {
-        TODO("Not yet implemented")
+        requireActivity().supportFragmentManager.openFragment(
+            InfoFragment(), "Info", "InfoFragment"
+        )
     }
 }

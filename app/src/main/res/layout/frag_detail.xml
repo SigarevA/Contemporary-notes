@@ -15,32 +15,38 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:elevation="@dimen/frag_detail_toolbar_elevation"
+            app:menu="@menu/frag_detail_menu"
             app:navigationIcon="@drawable/ic_arrow_back"
             app:title="@string/frag_note_details_title" />
 
-        <TextView
+        <EditText
             android:id="@+id/frag_detail_note_title"
             style="@style/NoteTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/frag_detail_text_margin_horizontal"
-            android:layout_marginTop="@dimen/frag_detail_text_margin_top"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginHorizontal="@dimen/frag_creating_note_horizontal_margin_et"
+            android:layout_marginTop="@dimen/frag_creating_note_primary_top_margin"
+            android:background="@null"
+            android:hint="@string/creating_note_title"
+            android:singleLine="true"
+            android:textColorHint="@color/col_secondary_text"
+            app:layout_constraintTop_toBottomOf="@id/creating_note_toolbar" />
 
-        <TextView
+        <EditText
             android:id="@+id/frag_detail_note_description"
-            style="@style/NoteDescription"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/frag_detail_text_margin_horizontal"
-            android:layout_marginTop="@dimen/frag_detail_text_margin_top"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginHorizontal="@dimen/frag_creating_note_horizontal_margin_et"
+            android:layout_marginTop="@dimen/frag_creating_note_secondary_top_margin"
+            android:background="@null"
+            android:fontFamily="@font/inter_regular"
+            android:hint="@string/creating_note_description"
+            android:textColor="@color/col_primary_text"
+            android:textColorHint="@color/col_secondary_text"
+            android:textSize="@dimen/frag_creating_note_secondary_text_size"
+            app:layout_constraintTop_toBottomOf="@id/title_note_et" />
+
+
     </LinearLayout>
 
 </ScrollView>

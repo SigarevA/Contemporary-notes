@@ -15,9 +15,11 @@ import ru.bsc.contemporaryNotes.databinding.FragNotesBinding
 import ru.bsc.contemporaryNotes.di.NoteParams
 import ru.bsc.contemporaryNotes.di.appDI
 import ru.bsc.contemporaryNotes.model.Note
+import ru.bsc.contemporaryNotes.ui.creatingNote.CreatingNoteFragment
 import ru.bsc.contemporaryNotes.ui.decorations.MarginItemDecoration
 import ru.bsc.contemporaryNotes.ui.detail.DetailNoteFragment
 import ru.bsc.contemporaryNotes.ui.info.InfoFragment
+import ru.bsc.contemporaryNotes.ui.utils.openFragment
 import ru.bsc.contemporaryNotes.ui.utils.showErrorSnackBar
 import kotlin.math.roundToInt
 
@@ -56,6 +58,13 @@ class NoteFragment : Fragment(), NoteView {
                         presenter.processOnClickAbout()
                 }
                 true
+            }
+            binding.fab.setOnClickListener {
+                requireActivity().supportFragmentManager.openFragment(
+                    CreatingNoteFragment(),
+                    "CreateNote",
+                    "CreatingNoteFragment"
+                )
             }
         }
     }

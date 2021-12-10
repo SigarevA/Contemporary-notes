@@ -11,10 +11,7 @@ import ru.bsc.contemporaryNotes.ui.notes.NoteView
 
 val presenterModule = DI.Module(name = "PresenterModule") {
     bindFactory { view: CreatingView ->
-        CreatingNotePresenter(
-            instance(),
-            view
-        )
+        CreatingNotePresenter(view)
     }
     bindFactory { params: NoteParams ->
         NotePresenter(
