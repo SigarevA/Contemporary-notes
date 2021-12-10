@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResultListener
 import ru.bsc.contemporaryNotes.R
 import ru.bsc.contemporaryNotes.databinding.FragDetailBinding
 import ru.bsc.contemporaryNotes.model.Note
+import ru.bsc.contemporaryNotes.ui.dialogs.SaveConfirmationDialog
 import ru.bsc.contemporaryNotes.ui.utils.createShareIntent
 import ru.bsc.contemporaryNotes.ui.utils.showSnackBar
 import java.text.SimpleDateFormat
@@ -26,6 +28,13 @@ class DetailNoteFragment : Fragment(R.layout.frag_detail), DetailNoteView {
     override fun onAttach(context: Context) {
         presenter = DetailNotePresenter(this, note)
         super.onAttach(context)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setFragmentResultListener("requestKey") { requestKey, bundle ->
+            val result = bundle.getString("bundleKey")
+        }
     }
 
     override fun onCreateView(
@@ -48,10 +57,18 @@ class DetailNoteFragment : Fragment(R.layout.frag_detail), DetailNoteView {
             binding.toolbar.setOnMenuItemClickListener { menuItem ->
                 when (menuItem.itemId) {
                     R.id.frag_detail_note_share_mi -> presenter.processClickShare()
-                    R.id.frag_detail_note_save_mi -> presenter.update(
-                        binding.fragDetailNoteTitle.text.toString(),
-                        binding.fragDetailNoteDescription.text.toString(),
-                    )
+                    R.id.frag_detail_note_save_mi -> {
+                        SaveConfirmationDialog().show(
+                            requireActivity().supportFragmentManager,
+                            "SaveConfirmation"
+                        )
+                        /*
+                        presenter.update(
+                            binding.fragDetailNoteTitle.text.toString(),
+                            binding.fragDetailNoteDescription.text.toString(),
+                        )
+                         */
+                    }
                 }
                 true
             }
