@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import org.kodein.di.instance
 import ru.bsc.contemporaryNotes.R
 import ru.bsc.contemporaryNotes.databinding.FragCreatingNoteBinding
-import ru.bsc.contemporaryNotes.di.appDI
+import ru.bsc.contemporaryNotes.di.DIHolder
 import ru.bsc.contemporaryNotes.model.Note
 import ru.bsc.contemporaryNotes.ui.info.InfoFragment
 import ru.bsc.contemporaryNotes.ui.utils.createShareIntent
@@ -17,7 +17,7 @@ import ru.bsc.contemporaryNotes.ui.utils.showSnackBar
 
 class CreatingNoteFragment : Fragment(), CreatingView {
 
-    private val presenter: CreatingNotePresenter by appDI.instance(arg = this)
+    private val presenter: CreatingNotePresenter by DIHolder.provider.di.instance(arg = this)
     private var binding: FragCreatingNoteBinding? = null
     private val title: String
         get() = binding?.titleNoteEt?.text?.toString().orEmpty()

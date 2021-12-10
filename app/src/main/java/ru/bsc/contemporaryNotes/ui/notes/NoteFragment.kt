@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import org.kodein.di.instance
 import ru.bsc.contemporaryNotes.R
 import ru.bsc.contemporaryNotes.databinding.FragNotesBinding
+import ru.bsc.contemporaryNotes.di.DIHolder
 import ru.bsc.contemporaryNotes.di.NoteParams
-import ru.bsc.contemporaryNotes.di.appDI
 import ru.bsc.contemporaryNotes.model.Note
 import ru.bsc.contemporaryNotes.ui.creatingNote.CreatingNoteFragment
 import ru.bsc.contemporaryNotes.ui.decorations.MarginItemDecoration
@@ -25,7 +25,12 @@ import kotlin.math.roundToInt
 
 class NoteFragment : Fragment(), NoteView {
 
-    private val presenter: NotePresenter by appDI.instance(arg = NoteParams(this, lifecycleScope))
+    private val presenter: NotePresenter by DIHolder.provider.di.instance(
+        arg = NoteParams(
+            this,
+            lifecycleScope
+        )
+    )
     private var binding: FragNotesBinding? = null
     private val noteAdapter by lazy { NoteAdapter(emptyList(), presenter::processOnClick) }
 
