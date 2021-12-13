@@ -37,4 +37,8 @@ class FakeRepo : NoteRepo {
     override suspend fun addNote(note: Note) {
         fakeNotes.add(note)
     }
+
+    override suspend fun update(note: Note) {
+        TODO("Not yet implemented")
+    }
 }

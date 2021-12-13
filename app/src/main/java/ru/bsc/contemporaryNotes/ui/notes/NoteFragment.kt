@@ -17,7 +17,7 @@ import ru.bsc.contemporaryNotes.di.NoteParams
 import ru.bsc.contemporaryNotes.model.Note
 import ru.bsc.contemporaryNotes.ui.creatingNote.CreatingNoteFragment
 import ru.bsc.contemporaryNotes.ui.decorations.MarginItemDecoration
-import ru.bsc.contemporaryNotes.ui.detail.DetailNoteFragment
+import ru.bsc.contemporaryNotes.ui.detailcontainer.DetailContainerActivity
 import ru.bsc.contemporaryNotes.ui.info.InfoFragment
 import ru.bsc.contemporaryNotes.ui.utils.openFragment
 import ru.bsc.contemporaryNotes.ui.utils.showErrorSnackBar
@@ -98,6 +98,13 @@ class NoteFragment : Fragment(), NoteView {
     }
 
     override fun renderOnClick(note: Note) {
+        val intent = DetailContainerActivity.createIntent(
+            requireActivity(),
+            noteAdapter.notes.toTypedArray(),
+            noteAdapter.notes.indexOf(note)
+        )
+        startActivity(intent)
+        /*
         requireActivity().supportFragmentManager.commit {
             setCustomAnimations(
                 R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit
@@ -105,6 +112,8 @@ class NoteFragment : Fragment(), NoteView {
             replace(R.id.container, DetailNoteFragment.newInstance(note), "DetailFragment")
             addToBackStack(null)
         }
+
+         */
     }
 
     override fun renderOnClickAbout() {

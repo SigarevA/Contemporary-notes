@@ -7,13 +7,11 @@ import ru.bsc.contemporaryNotes.model.Note
 import ru.bsc.contemporaryNotes.repositories.NoteRepo
 import java.util.*
 import kotlin.coroutines.CoroutineContext
-import kotlin.coroutines.coroutineContext
 
 class CreatingNotePresenter(
     private val view: CreatingView,
     private val noteRepo: NoteRepo
 ) {
-
 
     fun processClickInfo() {
         view.navigateToAbout()
@@ -25,9 +23,11 @@ class CreatingNotePresenter(
         }
     }
 
-    fun save(title: String, description: String) {
+    fun save(scope: CoroutineScope, title: String, description: String) {
         checkData(title, description) {
-            noteRepo.addNote(Note(-1, title, description, Date(), Date()))
+            scope.launch {
+                noteRepo.addNote(Note(-1, title, description, Date(), Date()))
+            }
             view.saveSuccess()
         }
     }
@@ -38,7 +38,6 @@ class CreatingNotePresenter(
         } else {
             doSuccess()
         }
-        coroutineScope {  }
     }
 
     companion object {

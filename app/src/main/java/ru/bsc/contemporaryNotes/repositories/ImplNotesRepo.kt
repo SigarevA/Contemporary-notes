@@ -22,4 +22,8 @@ class ImplNotesRepo(private val notesDao: NoteDao) : NoteRepo {
     override suspend fun addNote(note: Note) {
         notesDao.insert(EntityNote(0, note.title, note.description))
     }
+
+    override suspend fun update(note: Note) {
+        notesDao.update(EntityNote(note.id, note.title, note.description))
+    }
 }

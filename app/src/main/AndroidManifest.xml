@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ContemporaryNotes">
         <activity
+            android:name=".ui.detailcontainer.DetailContainerActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>

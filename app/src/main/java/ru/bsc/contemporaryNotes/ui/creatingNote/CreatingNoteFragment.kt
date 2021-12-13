@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import org.kodein.di.instance
 import ru.bsc.contemporaryNotes.R
 import ru.bsc.contemporaryNotes.databinding.FragCreatingNoteBinding
@@ -36,7 +37,7 @@ class CreatingNoteFragment : Fragment(), CreatingView {
         super.onViewCreated(view, savedInstanceState)
         binding?.let { binding ->
             binding.fab.setOnClickListener {
-                presenter.save(title, description)
+                presenter.save(lifecycleScope, title, description)
             }
             binding.creatingNoteToolbar.setOnMenuItemClickListener {
                 when (it.itemId) {

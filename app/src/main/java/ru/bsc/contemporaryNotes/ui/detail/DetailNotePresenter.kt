@@ -1,15 +1,20 @@
 package ru.bsc.contemporaryNotes.ui.detail
 
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import ru.bsc.contemporaryNotes.model.Note
+import ru.bsc.contemporaryNotes.repositories.NoteRepo
 
 class DetailNotePresenter(
     private val view: DetailNoteView,
-    private val note: Note
-
+    private val note: Note,
+    private val noteRepo: NoteRepo
 ) {
-    fun update(title: String, description: String) {
+    fun update(scope: CoroutineScope, title: String, description: String) {
         checkData(title, description) {
-            view.renderSuccessfulSave()
+            scope.launch {
+                noteRepo.update(note.copy(title = title, description = description))
+            }
         }
     }
 
@@ -23,5 +28,11 @@ class DetailNotePresenter(
 
     fun processClickShare() {
         view.share(note)
+    }
+
+    fun processUpdateNote(title: String, description: String) {
+        checkData(title, description) {
+            view.openDialog()
+        }
     }
 }
