@@ -110,6 +110,6 @@ class NoteFragment : Fragment(), NoteView {
 
     companion object {
         private const val CREATING_BACK_STACK_NAME = "CreateNote"
-        private const val TAG = "NoteFragment"
+        const val TAG = "NoteFragment"
     }
 }

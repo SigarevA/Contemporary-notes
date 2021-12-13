@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         if (savedInstanceState == null) {
             supportFragmentManager.commit {
-                add(R.id.container, NoteFragment(), "NoteFragment")
+                add(R.id.container, NoteFragment(), NoteFragment.TAG)
             }
         }
     }
