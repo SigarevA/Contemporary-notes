@@ -1,6 +1,8 @@
 package ru.bsc.contemporaryNotes.ui.notes
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +20,7 @@ import ru.bsc.contemporaryNotes.model.Note
 import ru.bsc.contemporaryNotes.ui.creatingNote.CreatingNoteFragment
 import ru.bsc.contemporaryNotes.ui.decorations.MarginItemDecoration
 import ru.bsc.contemporaryNotes.ui.detailcontainer.DetailContainerActivity
-import ru.bsc.contemporaryNotes.ui.info.InfoFragment
+import ru.bsc.contemporaryNotes.ui.info.InfoActivity
 import ru.bsc.contemporaryNotes.ui.utils.openFragment
 import ru.bsc.contemporaryNotes.ui.utils.showErrorSnackBar
 import kotlin.math.roundToInt
@@ -44,7 +46,6 @@ class NoteFragment : Fragment(), NoteView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter.loadData()
         binding?.let { binding ->
             binding.notes.layoutManager =
                 StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
@@ -72,6 +73,11 @@ class NoteFragment : Fragment(), NoteView {
                 )
             }
         }
+    }
+
+    override fun onResume() {
+        presenter.loadData()
+        super.onResume()
     }
 
     override fun onDestroyView() {
@@ -104,14 +110,7 @@ class NoteFragment : Fragment(), NoteView {
             noteAdapter.notes.indexOf(note)
         )
         startActivity(intent)
-        /*
-        requireActivity().supportFragmentManager.commit {
-            setCustomAnimations(
-                R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit
-            )
-            replace(R.id.container, DetailNoteFragment.newInstance(note), "DetailFragment")
-            addToBackStack(null)
-        }
+
     }
 
     override fun renderOnClickAbout() {

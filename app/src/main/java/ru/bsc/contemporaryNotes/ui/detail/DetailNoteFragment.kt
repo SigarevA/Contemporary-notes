@@ -6,9 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResultListener
+import androidx.lifecycle.lifecycleScope
+import org.kodein.di.instance
+import org.kodein.di.newInstance
 import ru.bsc.contemporaryNotes.R
 import ru.bsc.contemporaryNotes.databinding.FragDetailBinding
+import ru.bsc.contemporaryNotes.di.DIHolder
 import ru.bsc.contemporaryNotes.model.Note
+import ru.bsc.contemporaryNotes.ui.dialogs.SaveConfirmationDialog
 import ru.bsc.contemporaryNotes.ui.utils.createShareIntent
 import ru.bsc.contemporaryNotes.ui.utils.showSnackBar
 import java.text.SimpleDateFormat
@@ -35,7 +41,6 @@ class DetailNoteFragment : Fragment(R.layout.frag_detail), DetailNoteView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setFragmentResultListener(RESULT_KEY) { requestKey, bundle ->
             val result = bundle.getBoolean(RESULT_AGREE)
             if (result) {
@@ -77,15 +82,6 @@ class DetailNoteFragment : Fragment(R.layout.frag_detail), DetailNoteView {
     override fun onDestroyView() {
         binding = null
         super.onDestroyView()
-    }
-
-    companion object {
-        private const val NOTE_ARGS = "note_args"
-        fun newInstance(note: Note) = DetailNoteFragment().apply {
-            arguments = Bundle().apply {
-                putParcelable(NOTE_ARGS, note)
-            }
-        }
     }
 
     override fun renderSuccessfulSave() {

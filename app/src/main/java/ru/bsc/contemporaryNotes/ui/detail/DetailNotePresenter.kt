@@ -1,5 +1,6 @@
 package ru.bsc.contemporaryNotes.ui.detail
 
+import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import ru.bsc.contemporaryNotes.model.Note
@@ -13,6 +14,7 @@ class DetailNotePresenter(
     fun update(scope: CoroutineScope, title: String, description: String) {
         checkData(title, description) {
             scope.launch {
+                Log.d(TAG, "update note")
                 noteRepo.update(note.copy(title = title, description = description))
             }
         }
@@ -34,5 +36,9 @@ class DetailNotePresenter(
         checkData(title, description) {
             view.openDialog()
         }
+    }
+
+    companion object {
+        private const val TAG = "DetailNotePresenter"
     }
 }
