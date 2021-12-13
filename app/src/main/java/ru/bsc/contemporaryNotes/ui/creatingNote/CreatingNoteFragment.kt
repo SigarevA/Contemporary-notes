@@ -1,5 +1,6 @@
 package ru.bsc.contemporaryNotes.ui.creatingNote
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,9 +11,8 @@ import ru.bsc.contemporaryNotes.R
 import ru.bsc.contemporaryNotes.databinding.FragCreatingNoteBinding
 import ru.bsc.contemporaryNotes.di.appDI
 import ru.bsc.contemporaryNotes.model.Note
-import ru.bsc.contemporaryNotes.ui.info.InfoFragment
+import ru.bsc.contemporaryNotes.ui.info.InfoActivity
 import ru.bsc.contemporaryNotes.ui.utils.createShareIntent
-import ru.bsc.contemporaryNotes.ui.utils.openFragment
 import ru.bsc.contemporaryNotes.ui.utils.showSnackBar
 
 class CreatingNoteFragment : Fragment(), CreatingView {
@@ -71,8 +71,11 @@ class CreatingNoteFragment : Fragment(), CreatingView {
     }
 
     override fun navigateToAbout() {
-        requireActivity().supportFragmentManager.openFragment(
-            InfoFragment(), "Info", "InfoFragment"
-        )
+        val intent = Intent(requireContext(), InfoActivity::class.java)
+        startActivity(intent)
+    }
+
+    companion object {
+        const val TAG = "CreatingNoteFragment"
     }
 }

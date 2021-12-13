@@ -64,6 +64,7 @@ class DetailNoteFragment : Fragment(R.layout.frag_detail), DetailNoteView {
     }
 
     companion object {
+        const val TAG = "DetailFragment"
         private const val NOTE_ARGS = "note_args"
         fun newInstance(note: Note) = DetailNoteFragment().apply {
             arguments = Bundle().apply {

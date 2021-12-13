@@ -1,5 +1,6 @@
 package ru.bsc.contemporaryNotes.ui.notes
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +19,7 @@ import ru.bsc.contemporaryNotes.model.Note
 import ru.bsc.contemporaryNotes.ui.creatingNote.CreatingNoteFragment
 import ru.bsc.contemporaryNotes.ui.decorations.MarginItemDecoration
 import ru.bsc.contemporaryNotes.ui.detail.DetailNoteFragment
-import ru.bsc.contemporaryNotes.ui.info.InfoFragment
+import ru.bsc.contemporaryNotes.ui.info.InfoActivity
 import ru.bsc.contemporaryNotes.ui.utils.openFragment
 import ru.bsc.contemporaryNotes.ui.utils.showErrorSnackBar
 import kotlin.math.roundToInt
@@ -60,10 +61,10 @@ class NoteFragment : Fragment(), NoteView {
                 true
             }
             binding.fab.setOnClickListener {
-                requireActivity().supportFragmentManager.openFragment(
+                parentFragmentManager.openFragment(
                     CreatingNoteFragment(),
-                    "CreateNote",
-                    "CreatingNoteFragment"
+                    CREATING_BACK_STACK_NAME,
+                    CreatingNoteFragment.TAG
                 )
             }
         }
@@ -93,26 +94,22 @@ class NoteFragment : Fragment(), NoteView {
     }
 
     override fun renderOnClick(note: Note) {
-        requireActivity().supportFragmentManager.commit {
+        parentFragmentManager.commit {
             setCustomAnimations(
                 R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit
             )
-            replace(R.id.container, DetailNoteFragment.newInstance(note), "DetailFragment")
+            replace(R.id.container, DetailNoteFragment.newInstance(note), DetailNoteFragment.TAG)
             addToBackStack(null)
         }
     }
 
     override fun renderOnClickAbout() {
-        requireActivity().supportFragmentManager.commit {
-            setCustomAnimations(
-                R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit
-            )
-            replace(R.id.container, InfoFragment(), "DetailFragment")
-            addToBackStack(null)
-        }
+        val intent = Intent(requireContext(), InfoActivity::class.java)
+        startActivity(intent)
     }
 
     companion object {
+        private const val CREATING_BACK_STACK_NAME = "CreateNote"
         private const val TAG = "NoteFragment"
     }
 }
