@@ -11,6 +11,8 @@ import ru.bsc.contemporaryNotes.R
 import ru.bsc.contemporaryNotes.databinding.FragCreatingNoteBinding
 import ru.bsc.contemporaryNotes.di.appDI
 import ru.bsc.contemporaryNotes.model.Note
+import ru.bsc.contemporaryNotes.ui.info.InfoActivity
+import ru.bsc.contemporaryNotes.ui.utils.createShareIntent
 import ru.bsc.contemporaryNotes.ui.utils.showSnackBar
 
 class CreatingNoteFragment : Fragment(), CreatingView {
@@ -57,13 +59,7 @@ class CreatingNoteFragment : Fragment(), CreatingView {
     }
 
     override fun shareNote(note: Note) {
-        val sendIntent: Intent = Intent().apply {
-            action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, note.description)
-            type = "text/plain"
-        }
-        val shareIntent = Intent.createChooser(sendIntent, null)
-        startActivity(shareIntent)
+        startActivity(note.createShareIntent())
     }
 
     override fun saveError() {
@@ -72,5 +68,14 @@ class CreatingNoteFragment : Fragment(), CreatingView {
 
     override fun inappropriateData() {
         binding?.root?.showSnackBar(R.string.incomplete_data, binding?.fab)
+    }
+
+    override fun navigateToAbout() {
+        val intent = Intent(requireContext(), InfoActivity::class.java)
+        startActivity(intent)
+    }
+
+    companion object {
+        const val TAG = "CreatingNoteFragment"
     }
 }

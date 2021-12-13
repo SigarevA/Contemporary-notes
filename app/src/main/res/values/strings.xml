@@ -4,9 +4,20 @@
     <string name="creating_note_description">Описание</string>
     <string name="creating_note_title">Заголовок</string>
     <string name="note_created_successfully">Заметка успешно создана!</string>
+    <string name="note_updated_successfully">Заметка успешно обновлена!</string>
     <string name="incomplete_data">Заполнены не все поля!</string>
     <string name="error_saving_note">Ой, кажется, дождь начинается)</string>
     <string name="creating_note_about">О приложении</string>
     <string name="creating_note_share">Поделиться</string>
     <string name="frag_info_message">Оставайтесь всегда\nв курсе своих дел:)</string>
+    <string name="frag_creating_reminder">Напоминание</string>
+    <string name="item_notes_header">Заметки</string>
+
+    <string name="frag_note_error_msg">Не удалось загрузить заметки!</string>
+    <string name="frag_note_details_title">Подробности</string>
+    <string name="frag_creating_note_time">Время:</string>
+    <string name="frag_creating_note_date">Дата:</string>
+    <string name="frag_detail_note_save_mi_text">Сохранить</string>
+    <string name="frag_detail_note_share_mi">Поделиться</string>
+    <string name="description_add_note">Добавить заметку</string>
 </resources>

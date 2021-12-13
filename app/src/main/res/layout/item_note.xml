@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_note_card"
+    android:clickable="true"
+    android:elevation="@dimen/item_note_elevation"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:stateListAnimator="@animator/zoom_out_animator">
+
+    <TextView
+        android:id="@+id/item_note_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/item_note_margin_text"
+        android:ellipsize="end"
+        android:fontFamily="@font/inter_medium"
+        android:maxLines="2"
+        android:textColor="@color/col_primary_text"
+        android:textSize="@dimen/item_note_title" />
+
+    <TextView
+        android:id="@+id/item_note_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/item_note_margin_text"
+        android:ellipsize="end"
+        android:fontFamily="@font/inter_regular"
+        android:maxLines="2"
+        android:textColor="@color/col_primary_text"
+        android:textSize="@dimen/item_note_description" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
