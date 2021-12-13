@@ -1,23 +1,19 @@
 package ru.bsc.contemporaryNotes.ui.detail
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.setFragmentResultListener
-import androidx.lifecycle.lifecycleScope
-import org.kodein.di.instance
-import org.kodein.di.newInstance
 import ru.bsc.contemporaryNotes.R
 import ru.bsc.contemporaryNotes.databinding.FragDetailBinding
-import ru.bsc.contemporaryNotes.di.DIHolder
 import ru.bsc.contemporaryNotes.model.Note
-import ru.bsc.contemporaryNotes.ui.dialogs.SaveConfirmationDialog
 import ru.bsc.contemporaryNotes.ui.utils.createShareIntent
 import ru.bsc.contemporaryNotes.ui.utils.showSnackBar
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.properties.Delegates
 
 class DetailNoteFragment : Fragment(R.layout.frag_detail), DetailNoteView {
 
@@ -81,6 +77,15 @@ class DetailNoteFragment : Fragment(R.layout.frag_detail), DetailNoteView {
     override fun onDestroyView() {
         binding = null
         super.onDestroyView()
+    }
+
+    companion object {
+        private const val NOTE_ARGS = "note_args"
+        fun newInstance(note: Note) = DetailNoteFragment().apply {
+            arguments = Bundle().apply {
+                putParcelable(NOTE_ARGS, note)
+            }
+        }
     }
 
     override fun renderSuccessfulSave() {
