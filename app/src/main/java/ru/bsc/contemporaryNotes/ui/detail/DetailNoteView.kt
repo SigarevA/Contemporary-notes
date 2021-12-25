@@ -7,4 +7,5 @@ interface DetailNoteView {
     fun renderFailedSave()
     fun inappropriateData()
     fun share(note: Note)
+    fun openDialog()
 }

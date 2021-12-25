@@ -6,10 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import org.kodein.di.instance
 import ru.bsc.contemporaryNotes.R
 import ru.bsc.contemporaryNotes.databinding.FragCreatingNoteBinding
-import ru.bsc.contemporaryNotes.di.appDI
+import ru.bsc.contemporaryNotes.di.DIHolder
 import ru.bsc.contemporaryNotes.model.Note
 import ru.bsc.contemporaryNotes.ui.info.InfoActivity
 import ru.bsc.contemporaryNotes.ui.utils.createShareIntent
@@ -17,7 +18,7 @@ import ru.bsc.contemporaryNotes.ui.utils.showSnackBar
 
 class CreatingNoteFragment : Fragment(), CreatingView {
 
-    private val presenter: CreatingNotePresenter by appDI.instance(arg = this)
+    private val presenter: CreatingNotePresenter by DIHolder.provider.di.instance(arg = this)
     private var binding: FragCreatingNoteBinding? = null
     private val title: String
         get() = binding?.titleNoteEt?.text?.toString().orEmpty()
@@ -36,7 +37,7 @@ class CreatingNoteFragment : Fragment(), CreatingView {
         super.onViewCreated(view, savedInstanceState)
         binding?.let { binding ->
             binding.fab.setOnClickListener {
-                presenter.save(title, description)
+                presenter.save(lifecycleScope, title, description)
             }
             binding.creatingNoteToolbar.setOnMenuItemClickListener {
                 when (it.itemId) {

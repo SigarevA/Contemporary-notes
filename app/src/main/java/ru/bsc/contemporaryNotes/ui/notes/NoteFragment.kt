@@ -2,6 +2,7 @@ package ru.bsc.contemporaryNotes.ui.notes
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,12 +14,12 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import org.kodein.di.instance
 import ru.bsc.contemporaryNotes.R
 import ru.bsc.contemporaryNotes.databinding.FragNotesBinding
+import ru.bsc.contemporaryNotes.di.DIHolder
 import ru.bsc.contemporaryNotes.di.NoteParams
-import ru.bsc.contemporaryNotes.di.appDI
 import ru.bsc.contemporaryNotes.model.Note
 import ru.bsc.contemporaryNotes.ui.creatingNote.CreatingNoteFragment
 import ru.bsc.contemporaryNotes.ui.decorations.MarginItemDecoration
-import ru.bsc.contemporaryNotes.ui.detail.DetailNoteFragment
+import ru.bsc.contemporaryNotes.ui.detailcontainer.DetailContainerActivity
 import ru.bsc.contemporaryNotes.ui.info.InfoActivity
 import ru.bsc.contemporaryNotes.ui.utils.openFragment
 import ru.bsc.contemporaryNotes.ui.utils.showErrorSnackBar
@@ -26,7 +27,12 @@ import kotlin.math.roundToInt
 
 class NoteFragment : Fragment(), NoteView {
 
-    private val presenter: NotePresenter by appDI.instance(arg = NoteParams(this, lifecycleScope))
+    private val presenter: NotePresenter by DIHolder.provider.di.instance(
+        arg = NoteParams(
+            this,
+            lifecycleScope
+        )
+    )
     private var binding: FragNotesBinding? = null
     private val noteAdapter by lazy { NoteAdapter(emptyList(), presenter::processOnClick) }
 
@@ -40,7 +46,6 @@ class NoteFragment : Fragment(), NoteView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter.loadData()
         binding?.let { binding ->
             binding.notes.layoutManager =
                 StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
@@ -70,6 +75,11 @@ class NoteFragment : Fragment(), NoteView {
         }
     }
 
+    override fun onResume() {
+        presenter.loadData()
+        super.onResume()
+    }
+
     override fun onDestroyView() {
         binding?.apply {
             notes.adapter = null
@@ -94,13 +104,13 @@ class NoteFragment : Fragment(), NoteView {
     }
 
     override fun renderOnClick(note: Note) {
-        parentFragmentManager.commit {
-            setCustomAnimations(
-                R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit
-            )
-            replace(R.id.container, DetailNoteFragment.newInstance(note), DetailNoteFragment.TAG)
-            addToBackStack(null)
-        }
+        val intent = DetailContainerActivity.createIntent(
+            requireActivity(),
+            noteAdapter.notes.toTypedArray(),
+            noteAdapter.notes.indexOf(note)
+        )
+        startActivity(intent)
+
     }
 
     override fun renderOnClickAbout() {
