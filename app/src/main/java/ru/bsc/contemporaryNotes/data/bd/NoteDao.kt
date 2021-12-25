@@ -9,7 +9,7 @@ import ru.bsc.contemporaryNotes.entities.Note
 @Dao
 interface NoteDao {
     @Query("SELECT * FROM note")
-    suspend fun loadAllUsers(): Array<Note>
+    suspend fun loadAllNotes(): Array<Note>
 
     @Insert
     suspend fun insert(note: Note)

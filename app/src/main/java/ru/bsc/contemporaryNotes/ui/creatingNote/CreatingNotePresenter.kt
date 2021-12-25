@@ -19,14 +19,14 @@ class CreatingNotePresenter(
 
     fun shareData(title: String, description: String) {
         checkData(title, description) {
-            view.shareNote(Note(1, title, description, Date(), Date()))
+            view.shareNote(Note(1, title, description, Date()))
         }
     }
 
     fun save(scope: CoroutineScope, title: String, description: String) {
         checkData(title, description) {
             scope.launch {
-                noteRepo.addNote(Note(-1, title, description, Date(), Date()))
+                noteRepo.addNote(Note(-1, title, description, Date()))
             }
             view.saveSuccess()
         }

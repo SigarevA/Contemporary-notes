@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Contemporary Notes</string>
+    <string name="creating_note_description">Description</string>
+    <string name="creating_note_title">Title</string>
+    <string name="note_created_successfully">The note has been successfully created!</string>
+    <string name="note_updated_successfully">Note has been successfully updated!</string>
+    <string name="incomplete_data">Not all fields are filled in!</string>
+    <string name="error_saving_note">Oh, it seems the rain is starting)</string>
+    <string name="creating_note_about">About app</string>
+    <string name="creating_note_share">Share</string>
+    <string name="frag_info_message">Stay always in the know about your business:)</string>
+    <string name="frag_creating_reminder">Reminder</string>
+    <string name="item_notes_header">Notes</string>
+
+    <string name="frag_note_error_msg">Failed to load notes!</string>
+    <string name="frag_note_details_title">Details</string>
+    <string name="frag_creating_note_time">Time:</string>
+    <string name="frag_creating_note_date">Date:</string>
+    <string name="frag_detail_note_save_mi_text">Save</string>
+    <string name="frag_detail_note_share_mi">Share</string>
+    <string name="description_add_note">Add note</string>
+
+    <string name="dialog_confirmation_of_saving_note_title">save note?</string>
+    <string name="dialog_confirmation_of_saving_note_positive_btn">OK</string>
+    <string name="dialog_confirmation_of_saving_note_negative_btn">Cancel</string>
+</resources>

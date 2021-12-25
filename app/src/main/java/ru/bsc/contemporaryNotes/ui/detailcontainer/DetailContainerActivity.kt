@@ -38,11 +38,3 @@ class DetailContainerActivity : AppCompatActivity() {
             }
     }
 }
-
-class NotesPagerAdapter(fa: FragmentActivity, private val notes: List<Note>) :
-    FragmentStateAdapter(fa) {
-    override fun getItemCount(): Int = notes.size
-
-    override fun createFragment(position: Int): Fragment =
-        DetailNoteFragment.newInstance(notes[position])
-}

@@ -103,7 +103,7 @@ class DetailNoteFragment : Fragment(R.layout.frag_detail), DetailNoteView {
     override fun openDialog() {
         SaveConfirmationDialog().show(
             requireActivity().supportFragmentManager,
-            "SaveConfirmation"
+            SaveConfirmationDialog.TAG
         )
     }
 

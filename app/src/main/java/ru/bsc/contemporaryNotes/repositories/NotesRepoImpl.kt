@@ -9,21 +9,26 @@ private typealias EntityNote = ru.bsc.contemporaryNotes.entities.Note
 class ImplNotesRepo(private val notesDao: NoteDao) : NoteRepo {
 
     override suspend fun getNotes(): List<Note> =
-        notesDao.loadAllUsers().map {
+        notesDao.loadAllNotes().map {
             Note(
                 it.id,
                 it.title,
                 it.description,
-                Date(1638360751000),
-                Date(1638366300000)
+                Date()
             )
         }
 
     override suspend fun addNote(note: Note) {
-        notesDao.insert(EntityNote(0, note.title, note.description))
+        notesDao.insert(
+            EntityNote(
+                title = note.title,
+                description = note.description,
+                atCreated = note.dateOfCreation
+            )
+        )
     }
 
     override suspend fun update(note: Note) {
-        notesDao.update(EntityNote(note.id, note.title, note.description))
+        notesDao.update(EntityNote(note.id, note.title, note.description, note.dateOfCreation))
     }
 }
